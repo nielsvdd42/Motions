@@ -11,11 +11,14 @@ class Form extends Component {
             overwegendeOpt: '',
             constaterende: '',
             constaterendeOpt: '',
-            verzoekt: ''
+            verzoekt: '',
+            submit: false
         }
     }
-
-    
+    handleSubmit = event => {
+        event.preventDefault();
+        this.setState({submit: true});
+    }    
 
     changeNameHandler = (event) => {
         this.setState({name: event.target.value})
@@ -41,7 +44,8 @@ class Form extends Component {
 
       render() {
           return  (
-            <form className="Form">
+            <form className="Form" onSubmit={this.handleSubmit}>
+            {this.state.submit && <div><p>{this.state.name} heeft motie '{this.state.motieTitel}' ingediend.</p></div>}
             <div>
               <label>Naam (indiener)</label>
               <input type="text" value={this.state.name} onChange={this.changeNameHandler}></input>
