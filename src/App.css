@@ -1,5 +1,7 @@
 .App {
+  /**
   background-color: rgb(124, 33, 167);
+  **/
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -21,7 +23,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 50%;
+  margin: 1rem 4rem 0rem 4rem;
 }
 
 .Form {
@@ -52,4 +54,13 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+ul {
+  list-style-type:none;
+  width: 100%
+}
+
+li {
+  border-radius: 1rem
 }
